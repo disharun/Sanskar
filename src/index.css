@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.reveal.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal--left {
+  transform: translateX(-18px);
+}
+
+.reveal--right {
+  transform: translateX(18px);
+}
+
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+.reveal.reveal--visible.reveal--left,
+.reveal.reveal--visible.reveal--right {
+  transform: translateX(0);
+}
+
+.reveal.reveal--visible.reveal--scale {
+  transform: scale(1);
+}
+
+.reveal--zoom-in {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+.reveal.reveal--visible.reveal--zoom-in {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1.2s ease-out;
+}
+
+.reveal--fade-up {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.reveal.reveal--visible.reveal--fade-up {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+@keyframes float-pulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+.animate-float-pulse {
+  animation: float-pulse 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal--visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@keyframes arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.link-sweep {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms ease;
+}
+
+.link-sweep:hover::after {
+  transform: scaleX(1);
+}
+
+.link-sweep__arrow {
+  animation: arrow-nudge 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-sweep__arrow {
+    animation: none;
+  }
+  .link-sweep::after {
+    transition: none;
+  }
+}
+
+@keyframes btn-shine {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  55% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(120%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 45%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.22) 55%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.btn-premium:hover::before {
+  animation: btn-shine 900ms ease;
+}
+
+.btn-premium:active {
+  transform: translateY(0px) scale(0.99);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-premium,
+  .btn-premium:hover,
+  .btn-premium:active {
+    transition: none;
+    transform: none;
+    box-shadow: none;
+  }
+  .btn-premium::before,
+  .btn-premium:hover::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+@keyframes img-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.img-premium {
+  transform: translateZ(0);
+  transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+  filter: saturate(1.02) contrast(1.02);
+  will-change: transform;
+}
+
+.img-premium:hover {
+  transform: scale(1.015) rotate(-0.15deg);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.img-float {
+  animation: img-float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-premium,
+  .img-premium:hover {
+    transition: none;
+    transform: none;
+    box-shadow: none;
+    filter: none;
+  }
+  .img-float {
+    animation: none;
+  }
+}
