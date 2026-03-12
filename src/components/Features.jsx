@@ -32,12 +32,15 @@ const FEATURES = [
 const FeatureItem = ({ icon, title, desc }) => {
   const ref = useRevealOnScroll();
   return (
-    <div ref={ref} className="reveal reveal--fade-up max-w-sm">
+    <div
+      ref={ref}
+      className="reveal reveal--fade-up max-w-sm flex flex-col items-center md:items-start text-center md:text-left"
+    >
       <img src={icon} alt="" className="h-10 w-10 object-contain mb-3" />
       <h3 className="font-['Lato'] font-medium text-[20px] leading-[24px] text-black w-full max-w-full mb-2 whitespace-nowrap">
         {title}
       </h3>
-      <p className="font-['Lato'] font-normal text-[16px] leading-[29px] capitalize text-black/60 w-[320px] max-w-full min-h-[58px]">
+      <p className="font-['Lato'] font-normal text-[16px] leading-[29px] capitalize text-black/60 w-full max-w-[320px] md:max-w-full min-h-[58px]">
         {desc}
       </p>
     </div>
@@ -54,8 +57,8 @@ const Features = () => {
       <div className="mx-auto max-w-6xl px-6 md:px-16 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-start">
           {/* Left copy */}
-          <div className="max-w-xl pt-4">
-            <p className="font-['Lato'] font-normal text-[16px] leading-[100%] tracking-[2px] uppercase text-black w-[407px] max-w-full h-[19px] mb-4">
+          <div className="max-w-xl pt-4 text-center md:text-left flex flex-col items-center md:items-start">
+            <p className="font-['Lato'] font-normal text-[16px] leading-[100%] tracking-[2px] uppercase text-black w-full max-w-full mb-4">
               Great Features
             </p>
             <h2 className="font-['Quattrocento'] font-bold text-[36px] leading-[100%] capitalize text-black mb-6">
@@ -75,7 +78,7 @@ const Features = () => {
 
           {/* Right features */}
           <div className="relative">
-            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12 lg:pl-10">
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12 lg:pl-10 justify-items-center md:justify-items-start">
               {FEATURES.map((f) => (
                 <FeatureItem key={f.title} {...f} />
               ))}

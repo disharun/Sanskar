@@ -49,7 +49,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button (Placeholder) */}
-      <div className="md:hidden">
+      <div className="md:hidden ml-auto">
         <button className="text-black focus:outline-none">
           <svg
             className="w-6 h-6"
