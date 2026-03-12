@@ -47,7 +47,10 @@ const FeatureItem = ({ icon, title, desc }) => {
 const Features = () => {
   const ref = useRevealOnScroll();
   return (
-    <section ref={ref} className="reveal reveal--left relative bg-[#f6efe7] overflow-hidden">
+    <section
+      ref={ref}
+      className="reveal reveal--left relative bg-[#f6efe7] overflow-hidden"
+    >
       <div className="mx-auto max-w-6xl px-6 md:px-16 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
           {/* Left copy */}
@@ -61,8 +64,8 @@ const Features = () => {
               Enduring Style
             </h2>
             <p className="text-sm md:text-base leading-7 text-black/55 mb-8">
-              A Perfect Harmony Of Elegant Interiors And Distinguished Exteriors,
-              Crafted To Reflect Timeless Sophistication.
+              A Perfect Harmony Of Elegant Interiors And Distinguished
+              Exteriors, Crafted To Reflect Timeless Sophistication.
             </p>
 
             <button className="btn-premium inline-flex items-center justify-center rounded-sm bg-black px-6 py-3 text-xs font-semibold tracking-wide uppercase text-white shadow-sm hover:bg-black/90 transition-colors">
