@@ -3,9 +3,9 @@ import logo from "../assets/sanskar-logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm font-sans sticky top-0 z-50">
+    <nav className="flex items-center px-8 py-4 bg-white shadow-sm font-sans sticky top-0 z-50">
       {/* Logo Section */}
-      <div className="flex items-center">
+      <div className="flex items-center mr-10">
         <img
           src={logo}
           alt="Sanskar Realty"
@@ -14,7 +14,7 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <ul className="hidden md:flex space-x-8 text-sm font-medium text-gray-700">
+      <ul className="hidden md:flex space-x-8 text-sm font-medium text-gray-700 flex-1">
         <li className="cursor-pointer hover:text-black transition-colors">
           Home
         </li>
@@ -36,7 +36,7 @@ const Navbar = () => {
       </ul>
 
       {/* Right Action Buttons */}
-      <div className="hidden md:flex items-center space-x-6 text-xs font-semibold tracking-wide">
+      <div className="hidden md:flex items-center space-x-6 text-xs font-semibold tracking-wide ml-auto">
         <button className="text-gray-600 hover:text-black uppercase">
           Update
         </button>

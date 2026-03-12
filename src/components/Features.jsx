@@ -34,7 +34,7 @@ const FeatureItem = ({ icon, title, desc }) => {
   return (
     <div ref={ref} className="reveal reveal--fade-up max-w-sm">
       <img src={icon} alt="" className="h-10 w-10 object-contain mb-3" />
-      <h3 className="font-['Lato'] font-medium text-[20px] leading-[24px] text-black w-[320px] max-w-full mb-2">
+      <h3 className="font-['Lato'] font-medium text-[20px] leading-[24px] text-black w-full max-w-full mb-2 whitespace-nowrap">
         {title}
       </h3>
       <p className="font-['Lato'] font-normal text-[16px] leading-[29px] capitalize text-black/60 w-[320px] max-w-full min-h-[58px]">
@@ -52,9 +52,9 @@ const Features = () => {
       className="reveal reveal--left relative bg-[#f6efe7] overflow-hidden"
     >
       <div className="mx-auto max-w-6xl px-6 md:px-16 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-start">
           {/* Left copy */}
-          <div className="max-w-xl">
+          <div className="max-w-xl pt-4">
             <p className="font-['Lato'] font-normal text-[16px] leading-[100%] tracking-[2px] uppercase text-black w-[407px] max-w-full h-[19px] mb-4">
               Great Features
             </p>

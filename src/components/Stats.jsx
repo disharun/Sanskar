@@ -44,7 +44,7 @@ const Stats = () => {
   return (
     <section className="relative overflow-hidden bg-[#f6efe7]">
       {/* Background image */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center pt-20">
         <img
           src={bgStats}
           alt=""
@@ -54,7 +54,7 @@ const Stats = () => {
       </div>
 
       {/* Cards row */}
-      <div className="relative mx-auto max-w-6xl px-6 md:px-16 py-14 md:py-20">
+      <div className="relative mx-auto max-w-6xl px-6 md:px-16 py-14 md:py-20 -mt-10 md:-mt-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
           {STATS.map((s, idx) => (
             <div
